@@ -59,7 +59,7 @@ public abstract class GAction : MonoBehaviour
 
     public bool IsAchievableGiven(Dictionary<string, int> conditions)
     {
-        foreach(KeyValuePair<string, int> c in conditions)
+        foreach(KeyValuePair<string, int> c in preconditions)
         {
             if(!conditions.ContainsKey(c.Key))
                 return false;
