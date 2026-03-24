@@ -2,18 +2,16 @@ using UnityEngine;
 
 public class Rest : GAction
 {
+    Nurse thisNurse;
     public override bool PrePerform()
     {
         return true;
     }
     public override bool PostPerform()
     {
-        //beliefs.RemoveState("exhausted");
-        Nurse n = this.gameObject.GetComponent<Nurse>();
-        if (n != null)
-        {
-            n.ResetFatigue();
-        }
+        beliefs.RemoveState("exhausted");
+        thisNurse = this.gameObject.GetComponent<Nurse>();
+        thisNurse.resetPatient();
         return true;
     }
 }
