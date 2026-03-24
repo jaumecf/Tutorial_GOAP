@@ -33,14 +33,12 @@ public class WorldStates
         if (states.ContainsKey(key))
         {
             states[key] += value;
-            if (states[key] <= 0)
-            {
-                RemoveState(key);
-            }
+            if (states[key] < 0) states[key] = 0; // No deixem que sigui negatiu
         }
         else
         {
-            states.Add(key, value);
+            // Si intentem restar un estat que no existeix, el posem a 0
+            states.Add(key, Mathf.Max(0, value));
         }
     }
 

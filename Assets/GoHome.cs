@@ -11,6 +11,7 @@ public class GoHome : GAction
     public override bool PostPerform()
     {
         Destroy(this.gameObject);
+        GWorld.Instance.decreasePatientsCount();
         return true;
     }
 }

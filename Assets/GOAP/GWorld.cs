@@ -8,6 +8,7 @@ public sealed class GWorld
     private static WorldStates world;
     private static Queue<GameObject> patients;
     private static Queue<GameObject> cubicles;
+    private int patientsCount;
 
     static GWorld()
     {
@@ -26,6 +27,21 @@ public sealed class GWorld
 
     private GWorld()
     {
+    }
+
+    public void increasePatientsCount()
+    {
+        patientsCount++;
+    }
+
+    public void decreasePatientsCount()
+    {
+        patientsCount--;
+    }
+
+    public int GetNumPatients()
+    {
+        return patientsCount;
     }
 
     public void AddPatient(GameObject p)
